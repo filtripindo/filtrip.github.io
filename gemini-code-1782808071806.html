@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FILTRIP | Fuel Polishing & Fuel Recovery Specialist</title>
+    <meta name="description" content="Filtrip adalah partner reliability untuk menjaga performa genset dan kualitas bahan bakar melalui precision filtration technology untuk industri, data center, dan rumah sakit.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-indigo: #1800ac; /* Canva Vivid Indigo Utama */
+            --primary-orange: #FF6B00; /* Orange Utama */
+            --indigo-light: #3319cc;   /* Indigo Terang untuk Hover/Aksen */
+            --indigo-tint: #EEF0FF;    /* Tint Indigo Sangat Muda untuk Background Card */
+            --bg-light: #F4F6FC;       /* Abu-abu Terang Kebiruan */
+            --text-light: #FFFFFF;     /* Putih Bersih Kontras Tinggi */
+            --text-dark: #0A0047;      /* Deep Indigo untuk Teks Utama di Area Terang */
+            --text-muted: #535A80;     /* Muted Text Kontras Tinggi */
+            --border-color: #D3D7FA;   /* Garis Batas Lembut */
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Roboto', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --shadow-premium: 0 20px 40px rgba(24, 0, 172, 0.08);
+            
+            /* Warna Indikator Status Terang & Kontras Tinggi */
+            --status-danger: #FF4D4D;  /* Vivid Coral / Light Red */
+            --status-success: #00E676; /* Bright Emerald Green */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            background-color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px auto;
+        }
+
+        .section-tag {
+            color: var(--primary-orange);
+            font-family: var(--font-heading);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            color: var(--primary-indigo);
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            font-family: var(--font-heading);
+            font-size: 14px;
+            font-weight: 700;
+            border-radius: 6px;
+            transition: var(--transition);
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-orange);
+            color: var(--text-light);
+            box-shadow: 0 4px 14px rgba(255, 107, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #E05E00;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border-color: var(--text-light);
+            color: var(--text-light);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--text-light);
+            color: var(--primary-indigo);
+            transform: translateY(-3px);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary-indigo);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100px; /* Ditambah sedikit untuk akomodasi logo yang lebih besar */
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .main-logo {
+            height: 70px; /* Ukuran diperbesar dari sebelumnya 55px */
+            width: auto;
+            object-fit: contain;
+            transition: var(--transition);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .nav-link {
+            color: #E2E8F0;
+            font-family: var(--font-heading);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-orange);
+        }
+
+        .nav-cta {
+            background-color: var(--primary-orange);
+            color: var(--text-light);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .nav-cta:hover {
+            background-color: #E05E00;
+        }
+
+        .menu-toggle {
+            display: none;
+            color: var(--text-light);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* HERO SECTION */
+        #home {
+            min-height: 100vh;
+            background: linear-gradient(rgba(24, 0, 172, 0.90), rgba(24, 0, 172, 0.96)), 
+                        url('background-1.png') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            padding-top: 140px;
+            padding-bottom: 120px;
+            color: var(--text-light);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 46px;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary-orange);
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: #E2E8F0;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* Update Bagian Kanan Hero (Kotak Gambar Dinamis) */
+        .hero-visual {
+            position: relative;
+            background: #0A0047; /* Background gelap solid di dalam kotak */
+            border-left: 5px solid var(--primary-orange);
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+            overflow: hidden;
+        }
+
+        .hero-image-container {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            overflow: hidden;
+            display: block;
+        }
+
+        .hero-main-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
+
+        .monitoring-footer {
+            font-size: 13px;
+            color: #CBD5E1;
+            text-align: center;
+            padding-top: 15px;
+            padding-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .monitoring-footer i {
+            color: var(--primary-orange);
+            margin-right: 6px;
+        }
+
+        /* ABOUT SECTION */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-content h3 {
+            font-size: 28px;
+            color: var(--primary-indigo);
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--primary-indigo);
+            font-size: 15px;
+        }
+
+        .highlight-item i {
+            color: var(--primary-orange);
+            font-size: 18px;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-main-img {
+            border-radius: 6px;
+            box-shadow: var(--shadow-premium);
+            height: 380px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .experience-badge {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background-color: var(--primary-indigo);
+            color: var(--text-light);
+            padding: 25px;
+            border-left: 5px solid var(--primary-orange);
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(24, 0, 172, 0.2);
+        }
+
+        .experience-badge h4 {
+            font-size: 32px;
+            color: var(--primary-orange);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .experience-badge p {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #E2E8F0;
+        }
+
+        /* CORE CAPABILITIES */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .why-card {
+            background: var(--indigo-tint);
+            padding: 40px 30px;
+            border-radius: 6px;
+            border-bottom: 3px solid transparent;
+            transition: var(--transition);
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            background: var(--text-light);
+            box-shadow: var(--shadow-premium);
+            border-bottom-color: var(--primary-orange);
+        }
+
+        .why-icon {
+            font-size: 36px;
+            color: var(--primary-orange);
+            margin-bottom: 24px;
+        }
+
+        .why-card h3 {
+            font-size: 20px;
+            margin-bottom: 14px;
+            color: var(--primary-indigo);
+        }
+
+        .why-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        /* FUEL PROBLEMS SECTION */
+        #problems { background-color: var(--bg-light); }
+        
+        .prob-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .prob-item {
+            background: var(--text-light);
+            padding: 20px;
+            margin-bottom: 16px;
+            border-radius: 6px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            box-shadow: 0 4px 15px rgba(24, 0, 172, 0.03);
+        }
+
+        .prob-item i { 
+            color: var(--status-danger); 
+            font-size: 20px; 
+            margin-top: 3px; 
+        }
+        
+        .prob-item h4 { 
+            font-size: 18px; 
+            color: var(--primary-indigo); 
+            margin-bottom: 4px; 
+        }
+        
+        .prob-item p { 
+            color: var(--text-muted); 
+            font-size: 14px; 
+        }
+
+        .diagram-container {
+            background: var(--primary-indigo);
+            padding: 40px;
+            border-radius: 12px;
+            color: var(--text-light);
+            box-shadow: 0 15px 40px rgba(24, 0, 172, 0.2);
+        }
+
+        .diagram-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #D3D7FA;
+            font-weight: 700;
+        }
+
+        .flow-wrapper { display: flex; flex-direction: column; gap: 24px; }
+        
+        .flow-wrapper .flow-step {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.07);
+            padding: 16px 20px;
+            border-radius: 6px;
+            border-left: 4px solid #8A94E0;
+        }
+
+        .flow-wrapper .flow-step.active-step { 
+            border-left-color: var(--primary-orange); 
+            background: rgba(255, 107, 0, 0.15); 
+        }
+        
+        .flow-wrapper .flow-step.success-step { 
+            border-left-color: var(--status-success); 
+            background: rgba(0, 230, 118, 0.12); 
+        }
+        
+        .step-num { font-weight: 800; font-size: 20px; margin-right: 20px; opacity: 0.6; }
+        .flow-step.active-step .step-num { color: var(--primary-orange); opacity: 1; }
+        .flow-step.success-step .step-num { color: var(--status-success); opacity: 1; }
+        .step-info h5 { font-size: 16px; margin-bottom: 2px; font-weight: 700; }
+        .step-info p { font-size: 13px; color: #D3D7FA; }
+
+        /* ENGINEERING SOLUTIONS SECTION */
+        #services { background-color: var(--text-light); }
+        
+        .services-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 30px; 
+        }
+        
+        .service-card {
+            background: var(--text-light);
+            border: 1px solid var(--border-color);
+            padding: 45px 35px;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-premium);
+            transition: var(--transition);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary-orange);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 30px 60px rgba(24, 0, 172, 0.12);
+            border-color: transparent;
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-icon {
+            width: 65px;
+            height: 65px;
+            background-color: rgba(24, 0, 172, 0.06);
+            color: var(--primary-indigo);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            border-radius: 8px;
+            margin-bottom: 28px;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover .service-icon { 
+            background-color: var(--primary-indigo); 
+            color: var(--text-light); 
+            transform: scale(1.1);
+        }
+        
+        .service-card h3 { 
+            font-size: 22px; 
+            margin-bottom: 14px; 
+            color: var(--primary-indigo); 
+        }
+        
+        .service-card p { 
+            color: var(--text-muted); 
+            font-size: 15px; 
+            margin-bottom: 28px; 
+            min-height: 72px;
+        }
+        
+        .service-link { 
+            font-family: var(--font-heading); 
+            font-size: 13px; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            color: var(--primary-indigo); 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px; 
+            letter-spacing: 0.5px;
+        }
+        
+        .service-card:hover .service-link { 
+            color: var(--primary-orange); 
+        }
+        
+        .service-link i {
+            transition: var(--transition);
+        }
+        
+        .service-card:hover .service-link i {
+            transform: translateX(6px);
+        }
+
+        /* LABORATORY VALIDATION SECTION */
+        #lab-validation { background-color: var(--bg-light); }
+        .lab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+        .lab-card { background: var(--text-light); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; box-shadow: 0 10px 25px rgba(24, 0, 172, 0.04); }
+        .lab-card-header { padding: 18px; font-family: var(--font-heading); font-weight: 800; font-size: 16px; text-align: center; letter-spacing: 1px; color: var(--text-light); }
+        
+        .lab-before .lab-card-header { background-color: var(--status-danger); }
+        .lab-after .lab-card-header { background-color: var(--status-success); color: #0A0047; }
+        
+        .lab-metrics { display: flex; border-bottom: 1px solid var(--border-color); background-color: var(--indigo-tint); }
+        .metric-item { flex: 1; padding: 20px; text-align: center; }
+        .metric-item:first-child { border-right: 1px solid var(--border-color); }
+        .metric-label { display: block; font-size: 12px; color: var(--text-muted); text-transform: uppercase; font-weight: 700; margin-bottom: 4px; letter-spacing: 0.5px; }
+        .metric-val { font-family: var(--font-heading); font-weight: 800; font-size: 20px; color: var(--primary-indigo); }
+        
+        .text-alert { color: var(--status-danger); }
+        .text-success { color: #00B358; }
+        
+        .lab-image-container { padding: 24px; background: #FFFFFF; display: flex; justify-content: center; align-items: center; }
+        .lab-report-img { width: 100%; height: auto; max-height: 420px; object-fit: contain; border: 1px solid var(--border-color); box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: var(--transition); }
+        .lab-report-img:hover { transform: scale(1.02); }
+        .lab-footer-text { text-align: center; margin-top: 30px; font-family: var(--font-heading); font-weight: 700; color: var(--text-muted); font-size: 15px; }
+
+        /* LTSA PRICING MATRIX SECTION */
+        #ltsa {
+            background: linear-gradient(rgba(24, 0, 172, 0.93), rgba(24, 0, 172, 0.97)), 
+                        url('background-2.png') no-repeat center center/cover;
+            color: var(--text-light);
+        }
+        
+        .ltsa-matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            align-items: stretch;
+        }
+        
+        .premium-pricing-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 45px 35px;
+            position: relative;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .premium-pricing-card.featured {
+            background: rgba(255, 255, 255, 0.09);
+            border: 2.5px solid var(--primary-orange);
+            transform: scale(1.03);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        @media (max-width: 992px) {
+            .premium-pricing-card.featured { transform: scale(1); }
+        }
+        
+        .card-popular-badge {
+            position: absolute;
+            top: -15px;
+            right: 30px;
+            background: var(--primary-orange);
+            color: var(--text-light);
+            font-family: var(--font-heading);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(255, 107, 0, 0.4);
+        }
+        
+        .pricing-card-header h4 {
+            font-size: 24px;
+            color: var(--text-light);
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .pricing-card-header .price-tag {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary-orange);
+            margin: 10px 0;
+        }
+        
+        .pricing-card-header .price-tag span {
+            font-size: 14px;
+            font-weight: 400;
+            color: #CBD5E1;
+        }
+        
+        .pricing-card-header .plan-desc {
+            font-size: 14px;
+            color: #D3D7FA;
+            margin-bottom: 24px;
+            min-height: 40px;
+        }
+        
+        .pricing-features-list {
+            list-style: none;
+            margin-bottom: 40px;
+            flex-grow: 1;
+        }
+        
+        .pricing-features-list li {
+            font-size: 15px;
+            color: #E2E8F0;
+            margin-bottom: 18px;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.4;
+        }
+        
+        .pricing-features-list .feature-lbl {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary-orange);
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+        
+        .pricing-features-list .feature-val {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .pricing-features-list .feature-val i {
+            color: var(--primary-orange);
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        /* PROCESS SECTION */
+        #process { background-color: var(--bg-light); }
+        .process-flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; position: relative; margin-top: 50px; }
+        .process-step { text-align: center; position: relative; background: var(--text-light); padding: 30px 20px; border-radius: 6px; box-shadow: 0 4px 15px rgba(24, 0, 172, 0.02); }
+        
+        .process-num { 
+            width: 50px; 
+            height: 50px; 
+            background: var(--primary-indigo); 
+            color: var(--text-light); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-family: var(--font-heading); 
+            font-weight: 800; 
+            font-size: 18px; 
+            border-radius: 50%; 
+            margin: 0 auto 20px auto; 
+            border: 4px solid var(--text-light); 
+            box-shadow: 0 0 0 2px var(--primary-indigo); 
+            transition: var(--transition); 
+        }
+        
+        .process-step:hover .process-num { background: var(--primary-orange); box-shadow: 0 0 0 2px var(--primary-orange); }
+        .process-step h4 { font-size: 16px; color: var(--primary-indigo); margin-bottom: 10px; }
+        .process-step p { color: var(--text-muted); font-size: 13px; line-height: 1.4; }
+
+        /* CONTACT SECTION & FORM */
+        #contact { background-color: var(--text-light); }
+        .contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 50px; }
+        
+        .contact-info-box { 
+            background-color: var(--primary-indigo); 
+            color: var(--text-light); 
+            padding: 50px; 
+            border-radius: 8px; 
+            height: 100%; 
+            box-shadow: 0 15px 40px rgba(24, 0, 172, 0.15);
+        }
+        
+        .contact-info-box h3 { font-size: 28px; margin-bottom: 16px; }
+        .contact-info-box p { color: #D3D7FA; margin-bottom: 40px; }
+        .c-method { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+        .c-icon { width: 50px; height: 50px; background: rgba(255,255,255,0.1); color: var(--primary-orange); display: flex; align-items: center; justify-content: center; font-size: 20px; border-radius: 6px; }
+        .c-detail span { display: block; font-size: 13px; color: #CBD5E1; text-transform: uppercase; font-weight: 600; }
+        .c-detail a, .c-detail h5 { font-size: 18px; font-family: var(--font-heading); font-weight: 700; }
+        .contact-buttons-wrapper { margin-top: 40px; display: flex; flex-direction: column; gap: 12px; }
+        
+        .contact-form { background: var(--bg-light); padding: 50px; border-radius: 8px; border: 1px solid var(--border-color); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 14px; font-weight: 700; margin-bottom: 8px; color: var(--primary-indigo); font-family: var(--font-heading); }
+        .form-control { width: 100%; padding: 14px; border: 1px solid var(--border-color); background-color: var(--text-light); border-radius: 6px; font-family: var(--font-body); font-size: 15px; transition: var(--transition); color: var(--text-dark); }
+        .form-control:focus { outline: none; border-color: var(--primary-indigo); box-shadow: 0 0 0 3px rgba(24, 0, 172, 0.15); }
+        textarea.form-control { resize: vertical; min-height: 120px; }
+
+        /* FOOTER */
+        footer { 
+            background-color: #0E0066; /* Super Deep Indigo */
+            color: var(--text-light); 
+            padding: 80px 0 30px 0; 
+            border-top: 4px solid var(--primary-orange); 
+        }
+        
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 50px; margin-bottom: 50px; }
+        .footer-brand p { color: #CBD5E1; max-width: 400px; font-size: 15px; margin-bottom: 10px; }
+        .footer-brand .tagline { font-style: italic; color: var(--primary-orange); font-weight: 600; margin-top: 15px; }
+        .footer-links h4 { font-size: 18px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light); }
+        .footer-nav { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .footer-nav a { color: #CBD5E1; font-size: 15px; }
+        .footer-nav a:hover { color: var(--primary-orange); padding-left: 5px; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; text-align: center; font-size: 14px; color: #8A94E0; }
+
+        /* RESPONSIVE LAYOUT */
+        @media (max-width: 992px) {
+            .hero-grid, .about-grid, .prob-grid, .lab-grid, .contact-grid, .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            .hero-visual { order: 2; max-width: 550px; margin: 0 auto; width: 100%; }
+            .hero-content { order: 1; text-align: center; }
+            .hero-content p { margin: 0 auto 40px auto; }
+            .hero-buttons { justify-content: center; }
+            .process-flow { grid-template-columns: 1fr; }
+            .about-image { max-width: 500px; margin: 0 auto; }
+        }
+        @media (max-width: 768px) {
+            /* Styling awal navbar saat berada di paling atas */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    /* Menggunakan height tetap agar transisi perubahan ukuran jauh lebih stabil */
+    height: 90px; 
+    
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(11, 19, 32, 0.9);
+    
+    /* Efek transisi diperhalus menggunakan cubic-bezier (standar animasi premium) */
+    transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                backdrop-filter 0.5s ease;
+                
+    /* Memberikan efek blur transparan di belakang navbar agar estetik saat menimpa konten */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); 
+    
+    z-index: 1000;
+    will-change: height, background-color; /* Membantu browser mengoptimalkan akselerasi hardware */
+}
+
+/* Ukuran NAVBAR saat discroll (Menipis secara smooth) */
+.navbar.scrolled {
+    height: 45px; /* Menipis dari 90px ke 65px secara presisi */
+    background-color: rgba(11, 19, 32, 0.98); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Pastikan logo di dalam navbar ikut mengecil secara proporsional dan smooth */
+.navbar .logo img, 
+.navbar-brand img {
+    height: 45px; /* Sesuaikan dengan tinggi logo awal Anda */
+    transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar.scrolled .logo img,
+.navbar.scrolled .navbar-brand img {
+    height: 90px; /* Ukuran logo mengecil sedikit saat navbar menipis */
+}
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#home" class="logo-container">
+                <img src="logo-filtrip.png" alt="FILTRIP Logo" class="main-logo">
+            </a>
+            <i class="fa-solid fa-bars menu-toggle" id="menuBtn"></i>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#ltsa" class="nav-link">LTSA</a></li>
+                <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>Protect Your Generator Fuel <span>Before It Becomes a Problem</span></h1>
+                    <p>Fuel contamination can silently reduce generator performance. Filtrip restores and maintains fuel quality through precision filtration technology to ensure reliable power when you need it most.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">Request Fuel Inspection</a>
+                        <a href="#services" class="btn btn-secondary">Explore Solutions</a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="hero-image-container">
+                        <img src="hero-right-box.png" alt="Filtrip System Monitoring Graphics" class="hero-main-img">
+                    </div>
+                    <div class="monitoring-footer">
+                        <i class="fa-solid fa-microchip"></i> Continuous Closed-Loop Filtration Technology
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="visual-before-after.png" alt="Precision Fuel Filtration Environment" class="about-main-img">
+                    <div class="experience-badge">
+                        <h4>0.5μm</h4>
+                        <p>Precision Level</p>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="section-tag">More Than Tank Cleaning</span>
+                    <h3>Your Industrial Reliability Partner</h3>
+                    <p>Filtrip adalah specialist partner dalam menjaga reliability genset melalui teknologi filtrasi presisi, proses terstandar, dan hasil yang terukur. Kami membantu perusahaan menjaga kualitas bahan bakar, mengurangi risiko downtime, memperpanjang umur equipment, dan memastikan operasional berjalan secara berkelanjutan.</p>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight-item"><i class="fa-solid fa-shield-halved"></i> Fuel Filtration Specialist</div>
+                        <div class="highlight-item"><i class="fa-solid fa-gears"></i> Precision Technology</div>
+                        <div class="highlight-item"><i class="fa-solid fa-user-check"></i> Professional Field Service</div>
+                        <div class="highlight-item"><i class="fa-solid fa-file-invoice"></i> Complete Documentation</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <i class="fa-solid fa-filter why-icon"></i>
+                    <h3>Precision Filtration</h3>
+                    <p>Filtrasi hingga 0.5 micron untuk menghilangkan kontaminasi dan partikel halus yang membahayakan sistem injeksi.</p>
+                </div>
+                <div class="why-card">
+                    <i class="fa-solid fa-biohazard why-icon"></i>
+                    <h3>Bacteria Elimination</h3>
+                    <p>Mengurangi risiko pertumbuhan mikroba dan jamur yang menyebabkan fuel degradation di dalam tangki penyimpanan.</p>
+                </div>
+                <div class="why-card">
+                    <i class="fa-solid fa-bolt why-icon"></i>
+                    <h3>Minimal Downtime</h3>
+                    <p>Proses filtrasi dijalankan menggunakan sistem bypass tanpa mengganggu operasional atau mematikan critical power.</p>
+                </div>
+                <div class="why-card">
+                    <i class="fa-solid fa-file-shield why-icon"></i>
+                    <h3>Complete Documentation</h3>
+                    <p>Laporan hasil pekerjaan komprehensif, analisis laboratorium, dan sertifikasi untuk kebutuhan audit & compliance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="problems" class="section-padding">
+        <div class="container">
+            <div class="prob-grid">
+                <div>
+                    <span class="section-tag">Risk Assessment</span>
+                    <h2 class="section-title">Your Fuel May Look Clean, But It Could Be Damaged Internally</h2>
+                    <p style="color:var(--text-muted); margin-bottom: 30px;">Solar dalam tangki penyimpanan sangat rentan terhadap kontaminasi lingkungan luar dan penurunan kualitas konstan akibat kondisi penyimpanan yang statis.</p>
+                    <div class="prob-list">
+                        <div class="prob-item">
+                            <i class="fa-solid fa-droplet"></i>
+                            <div>
+                                <h4>Water Contamination</h4>
+                                <p>Kondensasi udara menghasilkan partikel air bebas yang merusak kompresi ruang bakar.</p>
+                            </div>
+                        </div>
+                        <div class="prob-item">
+                            <i class="fa-solid fa-bug"></i>
+                            <div>
+                                <h4>Microbial & Bacteria Growth</h4>
+                                <p>Mikroorganisme berkembang biak dengan cepat di lapisan perbatasan minyak dan air.</p>
+                            </div>
+                        </div>
+                        <div class="prob-item">
+                            <i class="fa-solid fa-dumpster"></i>
+                            <div>
+                                <h4>Sludge & Oxidation Accumulation</h4>
+                                <p>Endapan lumpur menumpuk di dasar tangki dan menyumbat filter serta saluran bahan bakar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="diagram-container">
+                    <div class="diagram-title">Purification Process Flow Diagram</div>
+                    <div class="flow-wrapper">
+                        <div class="flow-step"><div class="step-num">01</div><div class="step-info"><h5>Dirty Fuel In Tank</h5><p>Fuel contains water, fine particles, and sludge backlog.</p></div></div>
+                        <div class="flow-step active-step"><div class="step-num">02</div><div class="step-info"><h5>Filtrip Closed-Loop Processing</h5><p>Continuous multi-stage absolute filtration up to 0.5 micron.</p></div></div>
+                        <div class="flow-step success-step"><div class="step-num">03</div><div class="step-info"><h5>Clean, Restored Fuel</h5><p>Elimination of organic contaminants, water particulate split.</p></div></div>
+                        <div class="flow-step success-step"><div class="step-num">04</div><div class="step-info"><h5>Optimal Generator Performance</h5><p>Guaranteed reliability for critical system operation standby power.</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Engineering Solutions</span>
+                <h2>Our Specialized Solutions</h2>
+                <p class="section-subtitle">Didesain khusus dengan pendekatan engineering modern untuk menjamin keandalan sistem daya kritikal Anda.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-oil-can"></i></div>
+                    <h3>Fuel Polishing</h3>
+                    <p>Restorasi solar intensif dari kontaminasi partikulat mikro, air bebas, dan sludge organik tanpa risiko operasional downtime.</p>
+                    <a href="#contact" class="service-link">Inquire Solution <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <h3>Fuel Recovery</h3>
+                    <p>Mengembalikan stabilitas fisik bahan bakar yang terdegradasi parah agar sesuai dengan spesifikasi ketat pabrikan mesin.</p>
+                    <a href="#contact" class="service-link">Inquire Solution <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+                    <h3>LTSA Program</h3>
+                    <p>Sistem manajemen proteksi kualitas bahan bakar berkelanjutan secara periodik demi ketenangan aset jangka panjang.</p>
+                    <a href="#ltsa" class="service-link">View Program <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="lab-validation" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Empirical Data</span>
+                <h2>Proven Fuel Quality Improvement</h2>
+                <p class="section-subtitle">Validated Through Laboratory Analysis</p>
+            </div>
+
+            <div class="lab-grid">
+                <div class="lab-card lab-before">
+                    <div class="lab-card-header">BEFORE FILTRATION</div>
+                    <div class="lab-metrics">
+                        <div class="metric-item">
+                            <span class="metric-label">Particle Count</span>
+                            <span class="metric-val">≈ 443,127 particles</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">NAS Class</span>
+                            <span class="metric-val text-alert">12</span>
+                        </div>
+                    </div>
+                    <div class="lab-image-container">
+                        <img src="data-lab-before.png" alt="Laboratory Report Before Filtration" class="lab-report-img">
+                    </div>
+                </div>
+
+                <div class="lab-card lab-after">
+                    <div class="lab-card-header">AFTER FILTRATION</div>
+                    <div class="lab-metrics">
+                        <div class="metric-item">
+                            <span class="metric-label">Particle Count</span>
+                            <span class="metric-val">≈ 48,064 particles</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">NAS Class</span>
+                            <span class="metric-val text-success">8</span>
+                        </div>
+                    </div>
+                    <div class="lab-image-container">
+                        <img src="data-lab-after.png" alt="Laboratory Report After Filtration" class="lab-report-img">
+                    </div>
+                </div>
+            </div>
+            
+            <p class="lab-footer-text">Fuel contamination reduction after Filtrip closed-loop filtration process.</p>
+        </div>
+    </section>
+
+    <section id="ltsa" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" style="color: var(--primary-orange);">Asset Protection Plan</span>
+                <h2 class="section-title" style="color: var(--text-light);">Paket Layanan & Investasi</h2>
+                <p class="section-subtitle" style="color: #D3D7FA;">Pilih paket layanan yang sesuai dengan kebutuhan operasional dan tujuan bisnis Anda. Kami hadir untuk memberikan nilai terbaik.</p>
+            </div>
+
+            <div class="ltsa-matrix-grid">
+                <div class="premium-pricing-card">
+                    <div class="pricing-card-header">
+                        <h4>Responsive Solution</h4>
+                        <div class="price-tag">Rp 4.700 <span>/ liter</span></div>
+                        <p class="plan-desc">Solusi fleksibel dan responsif yang siap dipanggil kapan pun fasilitas Anda membutuhkan penanganan.</p>
+                    </div>
+                    <ul class="pricing-features-list">
+                        <li>
+                            <span class="feature-lbl">Frekuensi</span>
+                            <span class="feature-val"><i class="fa-solid fa-circle-check"></i> Sesuai kebutuhan (As needed)</span>
+                        </li>
+                        <li>
+                            <span class="feature-lbl">Komitmen Contract</span>
+                            <span class="feature-val"><i class="fa-solid fa-circle-check"></i> Tidak ada komitmen (No commitment)</span>
+                        </li>
+                        <li>
+                            <span class="feature-lbl">Kecocokan Fasilitas</span>
+                            <span class="feature-val"><i class="fa-solid fa-circle-check"></i> Cocok untuk fasilitas yang belum rutin maintenance</span>
+                        </li>
+                        <li>
+                            <span class="feature-lbl">Cakupan Kerja</span>
+                            <span class="feature-val"><i class="fa-solid fa-circle-check"></i> Fuel polishing, fuel recovery, water separation, & laporan dokumentasi lengkap</span>
+                        </li>
+                    </ul>
+                    <div class="pricing-card-footer">
+                        <a href="#contact" class="btn btn-secondary" style="width:100%">Pilih Paket</a>
+                    </div>
+                </div>
+
+                <div class="premium-pricing-card">
+                    <div class="pricing-card-header">
+                        <h4>Preventive Plan</h4>
+                        <div class="price-tag">Rp 4.500 <span>/ liter</span></div>
+                        <p class="plan-desc">Langkah pencegahan berkala terstruktur untuk memastikan kondisi bahan bakar tangki tetap stabil.</p>
+                    </div>
+                    <ul class="pricing-features-list">
+                        <li>
+                            <span class="feature-lbl">Frekuensi</span>
+                            <span class="feature-val"><i class="fa-solid fa-circle-check"></i> 3x per tahun (Setiap 4 bulan sekali)</span>
+                        </li>
+                        <li>
+                            <span class="feature-lbl">Komitmen Contract</span>
+                            <span class="feature-val"><i class="fa-solid fa-circle-check"></i> Ikatan kontrak tahunan (Annual contract)</span>
+                        </li>
+                        <li>
+                            <span class="feature-lbl">Kecocokan Fasilitas</span>
+                            <span class="feature-val"><i class="fa-solid fa-circle-check"></i> Rekomendasi untuk gedung perkantoran & fasilitas umum</span>
+                        </li>
+                        <li>
+                            <span class="feature-lbl">Cakupan Kerja</span>
+                            <span class="feature-val"><i class="fa-solid fa-circle-check"></i> Seluruh benefit dasar + Prioritas pengaturan jadwal visit lapangan</span>
+                        </li>
+                    </ul>
+                    <div class="pricing-card-footer">
+                        <a href="#contact" class="btn btn-secondary" style="width:100%">Pilih Paket</a>
+                    </div>
+                </div>
+
+                <div class="premium-pricing-card featured">
+                    <span class="card-popular-badge">★ Best Value</span>
+                    <div class="pricing-card-header">
+                        <h4>Total Reliability Program</h4>
+                        <div class="price-tag">Rp 4.200 <span>/ liter</span></div>
+                        <p class="plan-desc">Proteksi tingkat tertinggi dan jaminan keandalan total tanpa kompromi untuk sistem daya kritikal utama.</p>
+                    </div>
+                    <ul class="pricing-features-list">
+                        <li>
+                            <span class="feature-lbl">Frekuensi</span>
+                            <span class="feature-val"><i class="fa-solid fa-circle-check"></i> 4x per tahun (Setiap 3 bulan sekali)</span>
+                        </li>
+                        <li>
+                            <span class="feature-lbl">Komitmen Contract</span>
+                            <span class="feature-val"><i class="fa-solid fa-circle-check"></i> Ikatan kontrak tahunan (Annual contract)</span>
+                        </li>
+                        <li>
+                            <span class="feature-lbl">Kecocokan Fasilitas</span>
+                            <span class="feature-val"><i class="fa-solid fa-circle-check"></i> Mutlak untuk Data Center, Rumah Sakit, Hotel, & Instansi Kritis</span>
+                        </li>
+                        <li>
+                            <span class="feature-lbl">Cakupan Kerja</span>
+                            <span class="feature-val"><i class="fa-solid fa-circle-check"></i> Seluruh benefit utama + Prioritas penjadwalan + Layanan Emergency Response</span>
+                        </li>
+                    </ul>
+                    <div class="pricing-card-footer">
+                        <a href="#contact" class="btn btn-primary" style="width:100%">Pilih Paket</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Standard Operating Procedure</span>
+                <h2>Closed-Loop Fuel Polishing Process</h2>
+                <p class="section-subtitle">Prosedur penanganan sistematis terstandarisasi industri demi hasil maksimal yang akurat.</p>
+            </div>
+            
+            <div class="process-flow">
+                <div class="process-step"><div class="process-num">01</div><h4>Inspection</h4><p>Survey komprehensif kondisi fisik tangki mendeteksi tingkat kontaminasi.</p></div>
+                <div class="process-step"><div class="process-num">02</div><h4>Preparation</h4><p>Instalasi sirkuit peralatan mobile filtration loop terisolasi aman.</p></div>
+                <div class="process-step"><div class="process-num">03</div><h4>Fuel Circulation</h4><p>Pemurnian sirkulasi solar intensif melewati filter absolut separator.</p></div>
+                <div class="process-step"><div class="process-num">04</div><h4>Quality Checking</h4><p>Uji sampel akhir visual laboratorium memastikan kejernihan.</p></div>
+                <div class="process-step"><div class="process-num">05</div><h4>Reporting</h4><p>Serah terima bundel dokumentasi akuntabel serta sertifikasi jaminan.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info-box">
+                    <span class="section-tag">Get In Touch</span>
+                    <h3>Start With Fuel Inspection</h3>
+                    <p>Get professional assessment for your generator fuel condition and find the right solution with Filtrip corporate industrial representative specialist team.</p>
+                    
+                    <div class="c-method">
+                        <div class="c-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                        <div class="c-detail">
+                            <span>Direct Line Phone / WA</span>
+                            <a href="https://wa.me/6281282142079" target="_blank">+62 812-8214-2079</a>
+                        </div>
+                    </div>
+                    <div class="c-method">
+                        <div class="c-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="c-detail">
+                            <span>Official Corporate Email</span>
+                            <h5>filtripindonesia@gmail.com</h5>
+                        </div>
+                    </div>
+
+                    <div class="contact-buttons-wrapper">
+                        <a href="https://wa.me/6281282142079" class="btn btn-whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Now</a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/mwvdnnqj" method="POST" id="corporateContactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name / CP Representative</label>
+                            <input type="text" id="name" class="form-control" placeholder="e.g. Budi Santoso" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company / Institution Name</label>
+                            <input type="text" id="company" class="form-control" placeholder="e.g. PT Data Center Utama" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Corporate Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="e.g. rep@company.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone / WhatsApp Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="e.g. +62812345678" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Capacity & Facility Fuel Issue Details</label>
+                            <textarea id="message" class="form-control" placeholder="Jelaskan kebutuhan kapasitas tangki, tipe industri, atau masalah kontaminasi solar..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Formal Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo-filtrip.png" alt="FILTRIP Footer Logo" class="main-logo" style="margin-bottom: 20px;">
+                    <p>Fuel Polishing & Fuel Recovery Specialist</p>
+                    <p class="tagline">Reliable Fuel. Reliable Power. Peace of Mind.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul class="footer-nav">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#ltsa">LTSA Program</a></li>
+                        <li><a href="#contact">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 FILTRIP Indonesia. Fuel Quality Solutions Engineering. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuBtn = document.getElementById('menuBtn');
+            const navMenu = document.getElementById('navMenu');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            // Mobile Hamburger Menu Toggle
+            menuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                menuBtn.classList.toggle('fa-xmark');
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    menuBtn.classList.remove('fa-xmark');
+                    
+                    navLinks.forEach(item => item.classList.remove('active'));
+                    if (!link.classList.contains('nav-cta')) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // Smooth Header Scroll Effect & Logo Resizing Dinamis
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('header');
+                const logo = document.querySelector('.main-logo');
+                const navContainer = document.querySelector('.nav-container');
+                if (window.scrollY > 50) {
+                    navContainer.style.height = '80px';
+                    logo.style.height = '55px';
+                    header.style.backgroundColor = '#140094'; 
+                } else {
+                    navContainer.style.height = '100px';
+                    logo.style.height = '100px';
+                    header.style.backgroundColor = '#1800ac';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
